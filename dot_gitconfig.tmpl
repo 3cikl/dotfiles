@@ -1,0 +1,23 @@
+[user]
+  name = {{ .git_name | quote }}
+  email = {{ .git_email | quote }}
+  signingkey = {{ .git_signingkey | quote }}
+
+[gpg]
+  format = ssh
+
+[commit]
+  gpgsign = true
+
+[tag]
+  gpgsign = true
+
+[init]
+  defaultBranch = main
+
+[merge]
+  ff = only
+
+[alias]
+  commit = commit -s
+

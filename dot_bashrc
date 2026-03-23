@@ -1,0 +1,33 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+[[ -f $HOME/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+[[ -f /etc/profile.d/bash_completion.sh ]] && source /etc/profile.d/bash_completion.sh
+
+export PATH=$PATH:$HOME/.local/bin/
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
+export EDITOR="nvim"
+export MISE_ENV="dev"
+
+alias m="mise"
+alias k="kubectl"
+alias nv="nvim"
+alias yz="yazi"
+alias ch="chezmoi"
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
+eval "$(mise activate bash)"
+eval "$(starship init bash)"
+eval "$(zoxide init bash)"
+eval "$(atuin init bash)"
+
+# Lima BEGIN
+# Make sure iptables and mount.fuse3 are available
+PATH="$PATH:/usr/sbin:/sbin"
+export PATH
+# Lima END
