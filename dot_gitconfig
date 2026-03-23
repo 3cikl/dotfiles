@@ -1,7 +1,7 @@
 [user]
-  name = {{ .git_name | quote }}
-  email = {{ .git_email | quote }}
-  signingkey = {{ .git_signingkey | quote }}
+  name = 3cikl
+  email = 3cikl@proton.me
+  signingkey = ~/.ssh/3cikl@proton.me
 
 [gpg]
   format = ssh
